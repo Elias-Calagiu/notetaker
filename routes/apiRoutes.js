@@ -16,13 +16,13 @@ router.get("/api/notes", (req, res) => {
 
 router.post("/api/notes", (req, res) => {
     fs.readFile(path.join(__dirname, "../db/db.json"), "utf-8", (err, data) => {
-        let note= []
+        let note= JSON.parse(data)
         if (err)
             throw (err)
         const newNote = {
             title: req.body.title,
             text: req.body.text,
-            id: req.params.id,
+            id: parseInt(req.params.id)
         }
         note.push(newNote);
         console.log(newNote);
@@ -30,9 +30,12 @@ router.post("/api/notes", (req, res) => {
         fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(note), err => {
             if (err)
                 throw (err)
-            res.send(note)
+            res.json(note)
         })
     })
 })
 
+router.delete("/api/notes:id", (req,res)=>{
+
+})
 module.exports = router;
