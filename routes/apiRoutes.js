@@ -19,10 +19,12 @@ router.post("/api/notes", (req, res) => {
         let note= JSON.parse(data)
         if (err)
             throw (err)
+
+        const id = 0
         const newNote = {
             title: req.body.title,
             text: req.body.text,
-            id: parseInt(req.params.id)
+            id: id
         }
         note.push(newNote);
         console.log(newNote);
