@@ -7,8 +7,11 @@ This application will help users to be organized by allowing them to write, save
 ## Table of Contents
 
 *[Installation](#installation)
+
 *[Usage](#usage)
+
 *[License](#license)
+
 *[Screenshot](#screenshot)
 
 ## Installation
